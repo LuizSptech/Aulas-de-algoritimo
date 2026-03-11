@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="Receber()">Receber 100</button>
+    <span id="soma"></span>
+    <p></p>
+    <button onclick="retirar()">Pagar 50</button>
+    <span id="menos"></span>
+    <br>
+    <span id="final"></span>
+</body>
+</html>
+
+<script>
+
+let Saldo = 0
+
+function Receber(){  
+
+    Saldo += 100
+    soma.innerHTML = '“Transferência de R$100 recebida! Saldo atual: R$' + Saldo}
+
+function retirar(){
+    Saldo -= 50 
+    menos.innerHTML = `Pagamento de R$50 efetuado! Saldo atual: R$ ` + Saldo }
+
+
+    
+
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seja bem-vindo</h1>
+    <span>Digite a sua cidade natal</span>
+    <input type="text" id="ipt_Cidade_Natal">
+    <span>Digite o seu ano nascimento</span>
+    <input type="date" id="ipt_Nascimento">
+    <button onclick="cidadeNatal()">Monstrar Mensagem</button>
+</body>
+</html>
+
+<script>
+function cidadeNatal(){
+    alert("Você nasceu na cidade de " +
+     ipt_Cidade_Natal.value + " em " + ipt_Nascimento.value)
+
+
+}
+</script>

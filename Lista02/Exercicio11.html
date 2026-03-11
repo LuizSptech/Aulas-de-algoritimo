@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="tabuada" id="tabu">
+    <button onclick="tabuada()">Calcular</button>
+    <p id="saida"></p>
+
+</body>
+</html>
+
+<script>
+
+    function tabuada(){
+   
+         let vezes = Number(tabu.value) 
+
+        saida.innerHTML = ''
+        saida.innerHTML +=  '<br>' + vezes + 'x1= ' +`${vezes * 1}`
+        saida.innerHTML +=  '<br>' + vezes + 'x2= ' +`${vezes * 2}`
+        saida.innerHTML +=  '<br>' + vezes + 'x3= ' +`${vezes * 3}`
+
+        saida.innerHTML +=  '<br>' + vezes + 'x4= ' +`${vezes * 4}`
+        saida.innerHTML +=  '<br>' + vezes + 'x5= ' +`${vezes * 5}`
+        saida.innerHTML +=  '<br>' + vezes + 'x6= ' +`${vezes * 6}`
+        
+        saida.innerHTML +=  '<br>' + vezes + 'x7= ' +`${vezes * 7}`
+        saida.innerHTML +=  '<br>' + vezes + 'x8= ' +`${vezes * 8}`
+        saida.innerHTML +=  '<br>' + vezes + 'x9= ' +`${vezes * 9}`
+        saida.innerHTML +=  '<br>' + vezes + 'x10= '+`${vezes * 10}`
+    }
+
+
+
+</script>

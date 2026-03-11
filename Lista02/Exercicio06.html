@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Insira numero1</p>
+
+    <input type="text" id="ipt_nm1">
+
+    <p> Insira numero2</p>
+
+    <input type="text" id="ipt_nm2">
+
+    
+
+    <button onclick="soma()"> + </button>
+    <button onclick="subtração()"> - </button>
+    <button onclick="multiplicação()"> * </button>
+    <button onclick="divisão()"> / </button>
+    <span id="span_result"> = </span>
+</body>
+</html>
+
+
+<script>
+    function soma (){
+    span_result.innerHTML = "A soma é = " + (Number(ipt_nm1.value) + Number(ipt_nm2.value))
+    }
+     function subtração(){
+    span_result.innerHTML =  "A subtração é = " + (Number(ipt_nm1.value) - Number(ipt_nm2.value))
+    }
+     function multiplicação(){
+    span_result.innerHTML =  "A Multiplicação é = " + (Number(ipt_nm1.value) * Number(ipt_nm2.value))
+    }
+     function divisão(){
+    span_result.innerHTML =  "A divisão é = " + (Number(ipt_nm1.value) / Number(ipt_nm2.value)) 
+    }
+
+</script>

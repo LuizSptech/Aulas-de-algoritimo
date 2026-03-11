@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="valor">
+    <br>
+    <button onclick="depositar()">Depositar</button>
+    <br>
+    <button onclick="retirar()">Retirar</button>
+    <br>
+    <span id="final"></span>
+
+</body>
+</html>
+
+
+<script>
+
+let Saldo = 0 
+
+function depositar(){
+    let soma = Saldo += Number(valor.value)
+    final.innerHTML = `Depósito de R$ ${valor.value} efetuado! Saldo atual: ${soma}`
+
+}
+
+function retirar(){
+    let menos = Saldo -= Number(valor.value)
+    final.innerHTML = `Retirada de R$ ${valor.value} efetuado! Saldo atual ${menos} `
+
+}
+
+
+</script>

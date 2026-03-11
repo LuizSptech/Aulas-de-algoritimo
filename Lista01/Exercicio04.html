@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Seja bem-vindo</h1>
+    <p>Insira o nome da Rua/Avenida/Vila</p>
+    <input type="text" id="ipt_nomeRua">
+    
+    <p>Insira o número da casa</p>
+    <input type="text" id="ipt_numeroCasa">
+    <button onclick="monstrarcasa()">Monstrar Mensagem</button>
+</body>
+</html>
+
+<script>
+    function monstrarcasa(){
+        alert("SEu logradouro é " + ipt_nomeRua.value + " O numero do seu logradouro é " + ipt_numeroCasa.value );
+    }
+
+</script>

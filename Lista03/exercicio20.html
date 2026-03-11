@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantidade de homens no elevador <input type="text" id="ipt_homens"></p>
+    <p>Quantidade de mulheres no elevador <input type="text" id="ipt_mulheres"></p>
+    <button onclick="calcular()">Analisar peso</button>
+    <p id="mensagem"></p>
+</body>
+</html>
+<script>
+    function calcular() {
+        peso_total = Number(ipt_homens.value)*90+Number(ipt_mulheres.value)*70
+        msg = `<p style="color: green";>Esse elevador suporta 500 Kg e o peso estimado dessa lotação é de ${peso_total} Kg`
+        if (peso_total > 500){
+            mensagem.innerHTML = `<p style="color: red; font-weight: bold;">${msg}</p>`
+        } else {
+            mensagem.innerHTML = msg
+        }
+    }
+</script>

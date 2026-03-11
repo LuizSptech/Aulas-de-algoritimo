@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Preço da passagem" id="ipt_passagem">
+    <br><input placeholder="Quantas vezes por mês" id="ipt_qtd_viagens_mes">
+    <br><input placeholder="Distancia do trabalho Km" id="distancia_casa">
+    <button onclick="CalcularVT()">CalcularVT</button>
+    <div id="saida"></div>
+</body>
+</html>
+
+<script>
+    function CalcularVT(){
+        let valor_busão = Number(ipt_passagem.value) 
+        let varias = Number(ipt_qtd_viagens_mes.value)
+        let distancia = Number(distancia_casa.value)
+        let vrum = distancia * 0.75
+        let conta = varias * (10 / 100)
+        let uber = vrum + conta
+        let onibus = valor_busão * varias
+        let total = onibus + uber
+
+
+        saida.innerHTML = `Você vai gastar R$${total.toFixed(2)}`
+
+
+    }
+</script>

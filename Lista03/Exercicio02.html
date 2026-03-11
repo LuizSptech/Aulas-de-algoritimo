@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantas latinhas você toma por dia?</p>
+    <input type="text" id="ipt_latinha">
+    <button onclick="refri()">Quantos refris?</button>
+    <span id="ano"></span>
+</body>
+</html>
+
+<script>
+
+function refri(){
+    let refri = Number(ipt_latinha.value)
+    let dias = refri * 365
+    if (dias >= 500) {
+        alert("Cuidado com a diabetes!")
+    }
+    ano.innerHTML = `Você bebeu ${dias} latinhas por ano`
+}    
+
+
+</script>

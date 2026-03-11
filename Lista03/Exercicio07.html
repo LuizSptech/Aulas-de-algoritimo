@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Input placeholder="Digite o saldo" id="word">
+    <br>
+    <input placeholder="Digite o valor a tirar da conta" id="holdon">
+    <button onclick="conta()">Analisar conta</button>
+    <br>
+    <span id="saida"></span>
+</body>
+</html>
+
+<script>
+function conta(){
+    let calculo = Number(word.value) - Number(holdon.value)
+
+    saida.innerHTML = `O saldo atual da conta corrente é ${calculo}`
+
+    if (calculo <= 0){
+        saida.innerHTML = `O saldo atual da conta corrente é ${calculo}`
+    }
+
+
+}
+
+</script>

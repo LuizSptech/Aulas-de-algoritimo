@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Qual sua meta de economia</p>
+    <input type="text" id="meta_economia">
+
+    <p>Quanto tem guardado</p>
+    <input type="text" id="poupanca">
+
+    <button onclick="Analisar()">Analisar economia</button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+
+<script>
+    function Analisar(){
+        let meta = Number(meta_economia.value)
+        let guardado = Number(poupanca.value)
+        let final = guardado - meta
+        let faltando = meta - guardado
+        if (guardado > meta){
+            div_mensagem.innerHTML = `Meta ultrapassada em ${final}`
+        } else {            div_mensagem.innerHTML = `Força! ainda em busca da meta! Falta ${faltando}`
+}
+
+    }
+</script>

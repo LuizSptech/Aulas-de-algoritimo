@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantos pães franceses você come por dia</p>
+    <input type="text" id="qtd_pao">
+    <p>Quantos pacotes de bolacha recheada você come por dia</p>
+    <input type="text" id="qtd_bolacha">
+    <p>Quantos copos de achocolatado você toma por dias</p>
+    <input type="text" id="lt_choco">
+    <button onclick="calorias()">Verificar calorias</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function calorias(){
+        let qtd_pães = Number(qtd_pao.value)
+        let qtd_bulacha = Number(qtd_bolacha.value)
+        let lt_chocolate = Number(lt_choco.value)
+        let caloriasP = qtd_pães * 50
+        let caloriasB = qtd_bulacha * 80
+        let choco = lt_chocolate * 70 
+        let total = caloriasP + caloriasB + choco 
+        let mensagem=  ''
+
+        if (total < 200){
+            mensagem = 'Parabéns, vai ficar em forma!'
+        } else if (total  <= 400){
+            mensagem = "Cuidado, vai ficar menos saudável !"
+        }else {mensagem = "Alerta crítico de saúde !!!"}
+
+
+        div_mensagem.innerHTML =`${mensagem}`
+    }
+</script>

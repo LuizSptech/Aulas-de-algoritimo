@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Frequência do aluno <input type="text" id="ipt_freq"></p>
+    <button onclick="imagem()">Analisar frenquência</button>
+    <br>
+    <img width="200px" src="" alt="" id="resposta">
+</body>
+</html>
+<script>
+    function imagem() {
+        let imagem = document.getElementById("resposta")
+        let freq = Number(ipt_freq.value)
+        if (freq<50) {
+            imagem.src = "turista.png"
+        } else {
+            imagem.src = "nerd.avif"
+        }
+    }
+</script>

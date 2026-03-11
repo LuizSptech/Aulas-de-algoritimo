@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite as suas notas das avaliações continuadas</span>
+    <input type="text" id="ipt_cont">
+    <p> pesquisa de inovação</p>
+    <input type="text" id="ipt_PI">
+    <p>Digite seu nome</p>
+    <input type="text" id="ipt_Nm">
+    <button onclick="Media()">Média</button>
+    <SPAN id="span_nv"></SPAN>
+    
+</body>
+</html>
+
+<script>
+    function Media(){
+        span_nv.innerHTML = " A média de " + ipt_Nm.value + " será de " + ((Number(ipt_cont.value) * 0.4) + (Number(ipt_PI.value) * 0.6));
+    }
+</script>

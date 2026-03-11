@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira a temperatura" id="ipt_temperatura">
+    <button onclick="Temp()">Analisar temperatura</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Temp(){
+        let temperatura = Number(ipt_temperatura.value)
+        let mensagem = ''
+        if (temperatura <= 14){
+            mensagem = 'Congelante'
+        } else if (temperatura <= 21){
+            mensagem = 'Com frio'
+        } else if (temperatura <= 24){
+            mensagem = 'Confortável'
+        } else if (temperatura <= 31){
+            mensagem = 'Com calor'
+        } else {
+            mensagem = 'Calor escaldante'
+        }
+        div_mensagem.innerHTML = `Para o ser humano, a temperatura é ${mensagem}`
+    }
+
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="valor da pizza" id="ipt_valor"><br>
+    <input placeholder="quantidade de amigos" id="ipt_amigos"><br>
+    <button onclick="pizza()"><b>Rola a pizza?</b></button>
+    <span id="comida"></span><br>
+    <b><i><span style="color:brown" id="final" ></i></b>
+    
+</body>
+</html>
+
+<script>
+  
+    function pizza(){
+        let pizza = Number(ipt_valor.value)
+        let amigos = Number(ipt_amigos.value)
+        let conta = pizza /amigos
+        comida.innerHTML = `Cada amigo vai pagar ${conta}` 
+
+    if (conta > 20) {
+        final.innerHTML = "deu ruim"
+    }
+    }
+</script>

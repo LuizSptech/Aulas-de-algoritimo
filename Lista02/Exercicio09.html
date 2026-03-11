@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantas Horas Dormiu?" id="ipt_mimir">
+    <br>
+    <button onclick="Calcular()">Calcular Sono</button>
+    <span id="revelando"></span>
+</body>
+</html>
+
+<script>
+function Calcular(){
+    let sono = Number(ipt_mimir.value);
+        let fase1 = sono * 0.05;
+        let fase2 = sono * 0.45;
+        let fase3 = sono * 0.3;
+        let faseRem = sono * 0.2;
+
+        revelando.innerHTML = ""
+        revelando.innerHTML += `<br>${fase1.toFixed(2)} horas na fase 1 `;
+        revelando.innerHTML += `<br>${fase2.toFixed(2)} horas na fase 2 `;
+        revelando.innerHTML += `<br>${fase3.toFixed(2)} horas na fase 3 `;
+        revelando.innerHTML += `<br>${faseRem.toFixed(2)} horas na fase REM `;
+
+    
+}
+
+</script>

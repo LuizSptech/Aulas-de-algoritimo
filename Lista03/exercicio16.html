@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantidade de chocolates que quer comprar <input type="text" id="ipt_compra"></p>
+    <button onclick="calcular()">Compra</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let qtd = Number(ipt_compra.value)
+        let preco = 0;
+
+        qtd > 12 ? preco = 2.5 : preco = 3;
+        let valor_total = preco * qtd;
+        resposta.innerHTML = `O valor da sua compra foi de R$${valor_total.toFixed(2)}`
+        
+    }
+</script>

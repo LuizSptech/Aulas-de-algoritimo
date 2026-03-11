@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Sabor da pizza" id="ipt_sabor">
+    <br><input placeholder="Preço da pizza" id="ipt_preço">
+    <br><input placeholder="Quantidade de amigos" id="ipt_qtd_amigos">
+    <br><button onclick="dividir()">Ver, valor por amigo</button>
+    <div id="saida"></div>
+</body>
+</html>
+
+<script>
+    function dividir(){
+    let amigos = Number(ipt_qtd_amigos.value)
+    let preço = Number(ipt_preço.value)
+    let gorjeta = preço * 0.10
+    let final = preço + gorjeta
+    let divi = final / amigos
+    saida.innerHTML = ''
+    saida.innerHTML = `Cada amigo vai colaborar com R$ ${divi} para a pizza de ` + ipt_sabor.value 
+    }
+
+</script>

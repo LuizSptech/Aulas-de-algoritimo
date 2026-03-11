@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span style="color:brown"></span>
+    <p>digite sua nota</p>
+    <input placeholder="digite a nota1" id="ipt_nota1"></input><br>
+    <input placeholder="digite a nota2" id="ipt_nota2"></input><br>
+    <input placeholder="digite a nota3" id="ipt_nota3"></input><br>
+    <button onclick="desempenho()">desempenho</button>
+    <span id="final"></span>
+</body>
+</html>
+
+<script>
+
+function desempenho(){
+    let media = Number(ipt_nota1.value) + Number(ipt_nota2.value) + Number(ipt_nota3.value)
+    let calculada = media / 3
+    final.innerHTML = `Sua média foi de ${calculada.toFixed(2)}`
+    if (calculada >= 9.4) {
+        alert("Parabéns, você é fora de série!")
+    }
+
+}
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira ki base" id="KI">
+    <p>Transformar em </p>
+    <button onclick="SSJ()">SSJ</button>
+    <button onclick="SSJ2()">SSJ2</button>
+    <button onclick="SSJ3()">SSJ3</button>
+    <div id="saida"></div>
+
+</body>
+</html>
+
+<script>
+    
+    function SSJ(){
+    let energia = Number(KI.value)
+        let super1 = energia * 50
+        saida.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${super1}`
+    }
+    function SSJ2(){
+    let energia = Number(KI.value)
+        let super2 = energia * 100
+        saida.innerHTML = `Após se transformar em SS2, o ki desse Sayajin passa a ser de ${super2}`
+    }
+
+    function SSJ3(){
+    let energia = Number(KI.value)
+        let super3 = energia * 200
+        saida.innerHTML = `Após se transformar em SS3, o ki desse Sayajin passa a ser de ${super3}`
+    }
+    
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Votos Canditado A" id="A">
+    <br><input placeholder="Votos Canditado B" id="B">
+    <br><input placeholder="Votos Brancos" id="C">
+    <br><input placeholder="Votos Nulos" id="D">
+    <br><button onclick="Resultado()">Resultado Eleição</button>
+    <br><div id="final"></div>
+    
+    
+</body>
+</html>
+
+<Script>
+    function Resultado(){
+        let cand1 = Number(A.value)
+        let cand2 = Number(B.value)
+        let bran = Number(C.value)
+        let nul = Number(D.value)
+        let soma = cand1 + cand2 + bran + nul
+        let saida1 = (cand1 / soma) * 100
+        let saida2 = (cand2 / soma) * 100
+        let saida4 = ((nul + bran) / soma) * 100
+        final.innerHTML = ""
+        final.innerHTML += `<br>Total de votos ${soma}`
+        final.innerHTML += `<br> candidato 1 teve um total de % ${saida1.toFixed(2)} `
+        final.innerHTML += `<br> candidato 2 teve um total de % ${saida2.toFixed(2)} `
+        final.innerHTML += `<br> tivemos um total de % ${saida4.toFixed(2)} votos invalidos`
+        
+
+    
+    }
+
+</Script>

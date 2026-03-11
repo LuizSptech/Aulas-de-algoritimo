@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Temperatura <input type="text" id="ipt_freq"></p>
+    <button onclick="imagem()">Analisar clima</button>
+    <br>
+    <img width="400px" src="" alt="" id="resposta">
+</body>
+</html>
+<script>
+    function imagem() {
+        let imagem = document.getElementById("resposta")
+        let freq = Number(ipt_freq.value)
+        if (freq>10) {
+            imagem.src = "image.png"
+        } else {
+            imagem.src = "maca.jpg"
+        }
+    }
+</script>

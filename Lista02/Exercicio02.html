@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Dividindo a pizza</span>
+    <p>Valor da pizza</p>
+    <input type="text" id="ipt_valor">
+
+    <p>Quantidade de amigos</p>
+    <input type="text" id="ipt_quantidade">
+    <button onclick="Lovepizza()">#lovePizza</button>
+
+
+</body>
+</html>
+
+<script>
+    function Lovepizza(){
+        alert("Cada um dos " + ipt_quantidade.value + " amigos vai pagar R$" + (Number(ipt_valor.value) / Number(ipt_quantidade.value)));
+    }
+</script>
