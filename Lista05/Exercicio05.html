@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Temperatura</p>
+    <input type="text" id="temperatura">
+    <p>Umidade do ar</p>
+    <input type="text" id="relativa">
+    <button onclick="Avaliar()">Avaliar clima</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+    <script>
+        function Avaliar(){
+            let umidade = relativa.value;
+            let temp = temperatura.value;
+            let mensagem = ''
+            if (umidade < 0 || umidade > 100){
+                div_mensagem.innerHTML = ``
+                alert('Valor de umidade inválido')
+                
+            }else if ((temp >= 22 || temp <= 23) && umidade <= 60 ){
+                mensagem = 'Clima agradável'
+            }else {mensagem = 'Clima desconfortável'}
+
+            div_mensagem.innerHTML = `${mensagem}`
+
+        }
+
+
+    </script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Insira Login</p>
+    <input type="text" id="login">
+    <p>Insira sua senha</p>
+    <input type="text" id="senha">
+    <p>Informação Pessoal</p>
+    <input type="text" id="pessoal">
+    <button onclick="verificar()">Autentificar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    let contador = 3 
+    function verificar(){
+        let usuario = login.value;
+        let senha1 = senha.value;
+        let people = pessoal.value;
+        let mensagem = '';
+
+        if (((usuario == 'ana' && senha1 == 'braga') && people == '1949' || people == 'louro josé' ) && contador >= 1)
+        {mensagem = 'Usuário autenticado'} 
+        else if (contador > 0){ 
+            contador -= 1
+            mensagem = `Falha na autenticação, você ainda tem ${contador} tentativas`}
+        else {
+            mensagem = `Usuario bloqueado`
+        }
+
+        div_mensagem.innerHTML = `${mensagem}`
+
+        }
+
+    
+
+
+</script>

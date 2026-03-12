@@ -6,22 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Combo numero 1 (Comum / Estudante / Idoso/PNE)</p>
-    <input type="text" id="ipt_combo1">
-    <p>Combo numero 2 (Passagem única / Passagem integração)</p>
-    <input type="text" id="ipt_combo2">
-    <button onclick="simularPreço()">Simular preço</button>
+    <select name="Combo1" id="ipt_combo1">
+        <option value="comum">Comum</option>
+        <option value="estudante">Estudante</option>
+        <option value="idoso">Idoso/PNE</option>
+    </select>
+    
+
+    <select name="Combo2" id="ipt_combo2">
+        <option value="passagem_unica">Passagem única</option>
+        <option value="passagem_integra">Passagem Integração</option>
+    </select>
+    <button onclick="simular()">Simular Preço</button>
+    <div id="div_mensagem"></div>
 </body>
 </html>
 
 <script>
-    function simularPreço(){
-        let combo1 = ipt_combo1.value
-        let combo2 = ipt_combo2.value
-        let preço_final = 0
-        let preço_uni = 4.40
-        let preço_int = 5.90
-        let desconto = preço_final * (50 / 100)
+    function simular(){
+        let tipo = ipt_combo1.value;
+        let passagem = ipt_combo2.value;
+        let valor= 0;
+        
+        
+        if (tipo == 'comum' && passagem =='passagem_unica'){
+            valor = 4.40;
+        }else if (tipo == 'comum' && passagem =='passagem_integra'){
+            valor = 5.90;
+        }else if (tipo == 'estudante' && passagem == 'passagem_unica'){
+            valor = 4.40 / 2;
+        }else if (tipo == 'estudante' && passagem == 'passagem_integra'){
+            valor = 5.90 / 2;}
+
+        div_mensagem.innerHTML = `Valor da passagem é R$${valor.toFixed(2)}`;
 
     }
 
