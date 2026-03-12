@@ -27,31 +27,29 @@
             alert('Onde já se viu nota <0 ou >10')
 
         }
+         if (fre > 75 ){
+            mensagem += '<br>Aluno aprovado por frequencia'
+        }else {mensagem += "<br>Aluno reprovado por frequencia"}
 
         if (fre < 0 || fre > 100){
-            div_mensagem.innerHTML = ''
+            div_mensagem.innerHTML += ''
             alert('Onde já se viu frequencia <0 ou >100')}
 
 
-        if (fre > 75 ){
-            mensagem = 'Aluno aprovado por frequencia'
-        }else if (fre < 75){
-            mensagem = 'Aluno reprovado por frequencia'
-        }
+    
         
         
         if ( num1 < 6){
-            mensagem = 'Aluno ficou abaixo da média'
+            mensagem += '<br>Aluno ficou abaixo da média'
         }
         
         else if (num1 < 8 ){
-            mensagem = 'Aluno ficou na média'
+            mensagem += '<br>Aluno ficou na média'
         }
         else if (num1 >= 8 || num1 == 10){
-            mensagem = 'Aluno acima da média'}
+            mensagem += '<br>Aluno acima da média'}
 
-
-        div_mensagem.innerHTML = `${mensagem}`
+        div_mensagem.innerHTML += `${mensagem}`
 
     
 
