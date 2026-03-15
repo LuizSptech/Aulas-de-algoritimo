@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Loja de Jogos</h2>
+
+<p>Nome:</p>
+<input id="nome">
+<p>Idade:</p>
+<input id="ipt_idade">
+<p>Dinheiro disponível:</p>
+<input id="ipt_dinheiro">
+<p>Valor brinquedo</p>
+<input type="text" id="valor">
+
+<br><br>
+<button onclick="verificar()">Verificar compra</button>
+<div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+function verificar(){
+    let nomes = nome.value
+    let idade = Number(ipt_idade.value)
+    let dinheiro = Number(ipt_dinheiro.value)
+    let valorNec = Number(valor.value)
+
+    if (idade >= 12 && dinheiro >= valorNec){
+        resultado.innerHTML = `Compra realizada do brinquedo ${nomes} o seu troco é de R$${(dinheiro - valorNec).toFixed(2)}`
+    }else {resultado.innerHTML = `Compra rejeitada`}
+}
+</script>
+
+
+
+
