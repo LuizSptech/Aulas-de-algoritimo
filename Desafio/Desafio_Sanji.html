@@ -3,88 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Sanji Desafio</title>
 </head>
+
 <body>
     <p>Sanji Desafio</p>
+
     <input placeholder="Cadastrar Estoque de comida" id="cadastro">
+
     <button onclick="Cadastro()">Cadastrar!!</button>
-    <br>
+    <br><br>
+
     <button onclick="certifique()">Verificar Quantidade</button>
-    <br>
+    <br><br>
+
     <input placeholder="Espaço de Pesquisar" id="ipt_pesquisa">
-    <button onclick="pesquisar()">Pesquisar!!</button>
-    <div class="Saida1" id="div_mensagem"></div>
+    <button onclick="Pesquisar()">Pesquisar!!</button>
+
+    <div id="div_mensagem"></div>
     <br>
-    <div class="Saida2" id="div_mensagem2"></div>
+
+    <div id="div_mensagem_2"></div>
     <br>
-    <div class="Saida3" div="div_mensagem3"></div>
-    <button onclick="mostrar()">Exibit Estoque</button>
-    <div class="Saida4" div="div_mensagem4"></div>
 
+    <div id="div_mensagem_3"></div>
+    <br>
 
+    <button onclick="exibir()">Exibir Estoque</button>
+    <br>
 
+    <div id="div_mensagem_4"></div>
+
+    <p>Alterar Nome de Comida</p>
+
+<input placeholder="Nome atual" id="ipt_nome_atual">
+
+<input placeholder="Novo nome" id="ipt_nome_novo">
+
+<button onclick="alterarNome()">Alterar Nome</button>
+
+<div id="div_mensagem_5"></div>
+<br><br>
+
+<p>Remover Comida</p>
+
+<input placeholder="Nome da comida" id="ipt_remover">
+
+<button onclick="removerComida()">Remover Comida</button>
+
+<div id="div_mensagem_6"></div>
+<br></br>
 </body>
 </html>
 
-
 <script>
-    let lista = []
-    function Cadastro(){
-        let insert = [cadastro.value]
-        lista.push(insert[0])
-        div_mensagem.innerHTML = `${lista}`
-    }
+let lista = []
 
-    function certifique(){
-        let Quantidade = lista.length
-        console.log(Quantidade)
-        if(Quantidade <3){
-            div_mensagem2.innerHTML = `Desse jeito, o Luffy devora até o navio"`
-        }else if (Quantidade <= 7){
-            div_mensagem2.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
-        }else if (Quantidade <= 10){
-            div_mensagem2.innerHTML = `Assim, talvez sobre um pouco para a tripulação`
-        }else if (Quantidade > 10){
-            div_mensagem2.innerHTML = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!`
+function Cadastro(){
+    let insert = cadastro.value
+    lista.push(insert)
+    div_mensagem.innerHTML = `${lista}`
+}
+
+function certifique(){
+    let Quantidade = lista.length
+
+    if(Quantidade < 3){
+        div_mensagem_2.innerHTML = `Desse jeito, o Luffy devora até o navio`
+    } else if (Quantidade <= 7){
+        div_mensagem_2.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
+    } else if (Quantidade <= 10){
+        div_mensagem_2.innerHTML = `Assim, talvez sobre um pouco para a tripulação`
+    } else {
+        div_mensagem_2.innerHTML = `Vai ter comida pra todo mundo 😎`
+    }
+}
+
+function Pesquisar(){
+    let entrada = ipt_pesquisa.value
+    let quantidade = 0
+
+    div_mensagem_3.innerHTML = ""
+
+    if(lista.includes(entrada)){
+        for(let i = 0; i < lista.length; i++){
+            if(lista[i] == entrada){
+                quantidade++
+            }
+        }
+        div_mensagem_3.innerHTML = `Tem ${entrada} e há ${quantidade}`
+    } else {
+        div_mensagem_3.innerHTML = `Falta ${entrada} no estoque`
+    }
+}
+
+function exibir(){
+    let itens = []
+    let quantidades = []
+
+    div_mensagem_4.innerHTML = ""
+
+    for (let i = 0; i < lista.length; i++) {
+        let contador = 0
+
+        if (!itens.includes(lista[i])) {
+            itens.push(lista[i])
+
+            for (let j = 0; j < lista.length; j++) {
+                if (lista[i] == lista[j]) {
+                    contador++
+                }
+            }
+
+            quantidades.push(contador)
         }
     }
 
-    function pesquisar(){
-        
-        let entrada_de_pesquisa = ipt_pesquisa.value
-        let quantidade = Number()
-        if(lista.includes(entrada_de_pesquisa)){
-        for(let i = 0; i < lista.length; i++){
-        if (lista[i] == entrada_de_pesquisa){
-            quantidade += 1
-        div_mensagem3.innerHTML = `Sim temos a comida ${entrada_de_pesquisa} e há ${quantidade}`
+    for (let i = 0; i < itens.length; i++) {
+        if (quantidades[i] == 1) {
+            div_mensagem_4.innerHTML += `${itens[i]} (${quantidades[i]} unidade)<br>`
+        } else {
+            div_mensagem_4.innerHTML += `${itens[i]} (${quantidades[i]} unidades)<br>`
+        }
     }
 }
-    }else {
-        div_mensagem3.innerHTML = `Alguém vai ter que comprar ${entrada_de_pesquisa} ta fazendo falta`
-    }
-    
 
-     
-    }
-    function mostrar(){
-        let contagem = 0
-        let quantidade = Number()
-            
-    
-    }
-       
-          
-    
-</script>
+function alterarNome(){
+    let nomeAtual = ipt_nome_atual.value
+    let nomeNovo = ipt_nome_novo.value
+    let encontrou = false
 
-<script>
-/*Tenha um botão "Exibir Estoque":
- 
-Ao clicar nele exiba na tela todas as comidas cadastradas no estoque e a quantidade que tem de cada comida, conforme o exemplo abaixo:
-        - Arroz de Polvo (5 unidades)
-        - Ceviche de frutos do mar (1 unidade)
-        - ...*/
+    for(let i = 0; i < lista.length; i++){
+        if(lista[i] == nomeAtual){
+            lista[i] = nomeNovo
+            encontrou = true
+        }
+    }
+
+    if(encontrou){
+        div_mensagem_5.innerHTML = `A comida '${nomeAtual}' foi alterada para '${nomeNovo}'`
+    } else {
+        div_mensagem_5.innerHTML = `A comida '${nomeAtual}' não foi encontrada no estoque`
+    }
+}
+
+
+function removerComida(){
+    let nomeRemover = ipt_remover.value
+    let encontrou = false
+
+    for(let i = lista.length - 1; i >= 0; i--){
+        if(lista[i] == nomeRemover){
+            lista.splice(i, 1)
+            encontrou = true
+        }
+    }
+
+    if(encontrou){
+        div_mensagem_6.innerHTML = `A comida '${nomeRemover}' foi removida do estoque`
+    } else {
+        div_mensagem_6.innerHTML = `A comida '${nomeRemover}' não está no estoque`
+    }
+}
+
+
+
+
+
 </script>
