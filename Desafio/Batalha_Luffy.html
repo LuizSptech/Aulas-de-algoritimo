@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impel Down</title>
+</head>
+
+<body>
+    <h1>Desafio Luffy</h1>
+
+    <input placeholder="Quantidade de batalhas" id="ipt_batalhas">
+    <br></br>
+    <input  placeholder="Quantos marinheiros" id="ipt_Marinheiros">
+    <br></br>
+    <input placeholder="Quantidade de carne" id="ipt_Carne">
+    <br></br>
+    <br>
+    <br>
+    <button onclick="batalhar()">Batalhar</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+function batalhar() {
+    let batalhas = Number(ipt_batalhas.value);
+    let marinheiros = Number(ipt_Marinheiros.value);
+    let carnes = Number(ipt_Carne.value);
+
+    let derrotados = 0;
+    let energia = 100;
+
+    for (let i = 0; i < batalhas; i++) {
+        energia -= 10;
+
+        for (let j = 0; j < marinheiros; j++) {
+
+            if (energia < 5 && carnes > 0) {
+                carnes--;
+                energia += 100;
+            }
+
+            if (energia >= 5) {
+                energia -= 5;
+                derrotados++;
+            }
+        }
+    }
+
+    let totalInimigos = batalhas * marinheiros;
+    let resultado = (derrotados == totalInimigos) 
+        ? "Luffy saiu vitorioso!" 
+        : "Luffy saiu derrotado!";
+
+    div_mensagem.innerHTML = `
+        Resultado: ${resultado} <br>
+        Carnes restantes: ${carnes} <br>
+        Marinheiros derrotados: ${derrotados} <br>
+        Energia final: ${energia}
+    `;
+}
+</script>
