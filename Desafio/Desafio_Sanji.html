@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sanji Desafio</p>
+    <input placeholder="Cadastrar Estoque de comida" id="cadastro">
+    <button onclick="Cadastro()">Cadastrar!!</button>
+    <br>
+    <button onclick="certifique()">Verificar Quantidade</button>
+    <br>
+    <input placeholder="Espaço de Pesquisar" id="ipt_pesquisa">
+    <button onclick="pesquisar()">Pesquisar!!</button>
+    <div class="Saida1" id="div_mensagem"></div>
+    <br>
+    <div class="Saida2" id="div_mensagem2"></div>
+    <br>
+    <div class="Saida3" div="div_mensagem3"></div>
+    <button onclick="mostrar()">Exibit Estoque</button>
+    <div class="Saida4" div="div_mensagem4"></div>
+
+
+
+</body>
+</html>
+
+
+<script>
+    let lista = []
+    function Cadastro(){
+        let insert = [cadastro.value]
+        lista.push(insert[0])
+        div_mensagem.innerHTML = `${lista}`
+    }
+
+    function certifique(){
+        let Quantidade = lista.length
+        console.log(Quantidade)
+        if(Quantidade <3){
+            div_mensagem2.innerHTML = `Desse jeito, o Luffy devora até o navio"`
+        }else if (Quantidade <= 7){
+            div_mensagem2.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
+        }else if (Quantidade <= 10){
+            div_mensagem2.innerHTML = `Assim, talvez sobre um pouco para a tripulação`
+        }else if (Quantidade > 10){
+            div_mensagem2.innerHTML = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!`
+        }
+    }
+
+    function pesquisar(){
+        
+        let entrada_de_pesquisa = ipt_pesquisa.value
+        let quantidade = Number()
+        if(lista.includes(entrada_de_pesquisa)){
+        for(let i = 0; i < lista.length; i++){
+        if (lista[i] == entrada_de_pesquisa){
+            quantidade += 1
+        div_mensagem3.innerHTML = `Sim temos a comida ${entrada_de_pesquisa} e há ${quantidade}`
+    }
+}
+    }else {
+        div_mensagem3.innerHTML = `Alguém vai ter que comprar ${entrada_de_pesquisa} ta fazendo falta`
+    }
+    
+
+     
+    }
+    function mostrar(){
+        let contagem = 0
+        let quantidade = Number()
+            
+    
+    }
+       
+          
+    
+</script>
+
+<script>
+/*Tenha um botão "Exibir Estoque":
+ 
+Ao clicar nele exiba na tela todas as comidas cadastradas no estoque e a quantidade que tem de cada comida, conforme o exemplo abaixo:
+        - Arroz de Polvo (5 unidades)
+        - Ceviche de frutos do mar (1 unidade)
+        - ...*/
+</script>
