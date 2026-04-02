@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantas cocas ja bebeu na vida" id="ipt_capacidade">
+    <button onclick="olokinho()">Ver a quantidade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function olokinho(){
+        let meu = Number(ipt_capacidade.value)
+        div_mensagem.innerHTML = ""
+        for(let i = 0; i < meu; i++){
+        div_mensagem.innerHTML += `<img src='Coca-Cola.jpg' width='100'>`
+        }    
+}
+</script>

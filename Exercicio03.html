@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantas pessoas vão viajar?" id="ipt_people">
+    <br>
+    <input placeholder="Insira a capacidade do carro" id="ipt_capacidade">
+    <button onclick="viagem()">#Partiu Carona</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+
+<script>
+    function viagem(){
+        let pessoas = Number(ipt_people.value);
+        let capacidade = Number(ipt_capacidade.value)
+
+        for(let i = 0; i < pessoas; i++){
+            if(i == 0 ){
+                div_mensagem.innerHTML += `Entrou o passageiro ${i +1} motorista<br>`
+            }else if (i >= capacidade){
+                div_mensagem.innerHTML += `O ${i + 1} passageiro tera que esperar<br>`
+            }else {div_mensagem.innerHTML += `Entrou o ${i + 1} passageiro<br>`}
+        }
+    }
+</script>
