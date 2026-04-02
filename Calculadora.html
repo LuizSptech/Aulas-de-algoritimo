@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ganho total (diario)</p>
+    <input type="text" id="ipt_ganho">
+    <p>Insira seu ticktet</p>
+    <input type="text" id="ipt_ticktet">
+    <p>Insira o numero de mesas que você tem</p>
+    <input type="text" id="ipt_mesas">
+    <button onclick="olokinho()">descubra</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function olokinho(){
+        
+        let ganho = Number(ipt_ganho.value)
+        let tick = Number(ipt_ticktet.value)
+        let mesas = Number(ipt_mesas.value)
+        let mensagem = ""
+
+        let numero_pessoas = ganho / tick;
+        let rotacao = numero_pessoas / mesas;
+
+        
+
+        if(rotacao <= 1.5){
+            mensagem = "rotação baixa"
+        }else if (rotacao < 2) {
+            mensagem = "rotação aceitavel"
+        }if (rotacao > 2){mensagem = "rotação saudavel"}
+
+        div_mensagem.innerHTML = (`vocẽ teve um total de ${numero_pessoas.toFixed(0)} pessoas, e um total de ${rotacao.toFixed(2)} de pessoa por mesa, no final teve ${mensagem}`)
+
+    }
+</script>
