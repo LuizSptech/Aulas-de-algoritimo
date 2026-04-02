@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX1</title>
+</head>
+<body>
+    <input placeholder="insira um numero" id="ipt_numero">
+    <button onclick="now()">Press</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function now(){
+
+        div_mensagem.innerHTML = ''
+    let input = Number(ipt_numero.value)
+    for(let i = 2; i < input; i++){
+    if(input % i === 0){
+        
+        div_mensagem.innerHTML += `divisores do numero ${i}<br>`
+    }
+    }
+    }
+
+</script>
