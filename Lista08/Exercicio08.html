@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira um numero" id="ipt_number">
+    <br>
+    <input placeholder="Insira uma frase" id="ipt_frase">
+    <button onclick="paraguaio()">Papagaio</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function paraguaio(){
+    let numeros = Number(ipt_number.value)
+    let frase = ipt_frase.value
+    let contador = 0
+        while(contador < numeros){
+        contador++
+        alert(`${contador}  ${frase}`)
+        }
+    }
+</script>

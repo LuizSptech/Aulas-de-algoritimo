@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Multiplos de (0 a 200)" id="multiplo">
+    <button onclick="tabuada()">Adoro múltiplos de 7</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function tabuada(){
+    let limite = Number(multiplo.value)
+    let contador = 0
+     div_mensagem.innerHTML = ``
+    while(contador < limite){
+        contador++
+        if(contador % 7 == 0){
+            div_mensagem.innerHTML += `${contador}<br>`
+            
+        }
+    }
+}
+</script>

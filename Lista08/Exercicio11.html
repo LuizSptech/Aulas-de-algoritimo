@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Qual tabuada você deseja ver na tela? (2 a 9)</p>
+    <input placeholder="Insira um numero " id="ipt_tabuada">
+    <p>Ate qual numero deseja ir </p>
+    <input id="ipt_limite">
+    <div id="div_mensagem"></div>
+    <button onclick="verTabuada()"></button>
+    <span style="color: red;"></span>
+    <span style="color: blue;"></span>
+     
+</body>
+</html>
+
+
+<script>
+    function verTabuada(){
+        let numTabuada = Number(ipt_tabuada.value);
+        let limite = Number(ipt_limite.value)
+        div_mensagem.innerHTML = '';
+        let mensagem = ``
+
+        let contador = 1
+        while (contador <= limite){
+
+            let conta = `${numTabuada} x  ${contador} = ${numTabuada * contador}`
+
+            if (contador % 2 == 0)
+            
+            {
+            mensagem = `<span style="color: blue;">${conta}</span>`
+            }
+            
+            else {
+            mensagem = ` <span style="color: red;">${conta}</span>`
+            }
+            
+
+
+            div_mensagem.innerHTML += `${mensagem}<br>`
+            contador++;
+        }
+    }
+</script>

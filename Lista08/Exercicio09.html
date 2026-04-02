@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Insira um valor crescente</p>
+    <input type="text" id="valor_crescente">
+    <button onclick="Pares()">S2 Pares</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    let crescendo = [Number(valor_crescente.value)]
+    function Pares(){
+        let contador 
+
+    while(contador < crescendo[crescendo.length -1]){
+        if(crescendo % 2 === 0){
+            div_mensagem.innerHTML += `${crescendo}`
+        }
+    }
+    }
+</script>
