@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite nota do atendimento</p>
+    <input type="text" id="nota_atend">
+    <button onclick="atendimento()">Avaliar atendimento</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function atendimento(){
+        let nota = Number(nota_atend.value)
+        let mensagem = ''
+        if (nota < 0 || nota > 10){
+            mensagem = 'Nota inválida'
+        }else if (nota > 0 && nota < 5){
+            mensagem = 'Não aprovado'
+        }else if (nota >= 5 && nota <= 6){
+            mensagem = 'Neutro'
+        }else {mensagem = 'Aprovado'}
+
+        div_mensagem.innerHTML = `${mensagem}`
+    }
+</script>
+

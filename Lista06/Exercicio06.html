@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>Sua nota</P>
+    <input type="text" id="nota">
+    <p>Frequencia</p>
+    <input type="text" id="frequencia">
+    <button onclick="botao()">Analisar Aluno</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function botao(){
+        let num1 = Number(nota.value)
+        let fre = Number(frequencia.value)
+        let mensagem = ''
+
+        if (num1 < 0 || num1 > 10){
+            div_mensagem.innerHTML = ''
+            alert('Onde já se viu nota <0 ou >10')
+
+        }
+         if (fre > 75 ){
+            mensagem += '<br>Aluno aprovado por frequencia'
+        }else {mensagem += "<br>Aluno reprovado por frequencia"}
+
+        if (fre < 0 || fre > 100){
+            div_mensagem.innerHTML += ''
+            alert('Onde já se viu frequencia <0 ou >100')}
+
+
+    
+        
+        
+        if ( num1 < 6){
+            mensagem += '<br>Aluno ficou abaixo da média'
+        }
+        
+        else if (num1 < 8 ){
+            mensagem += '<br>Aluno ficou na média'
+        }
+        else if (num1 >= 8 || num1 == 10){
+            mensagem += '<br>Aluno acima da média'}
+
+        div_mensagem.innerHTML += `${mensagem}`
+
+    
+
+
+    }
+
+</script>

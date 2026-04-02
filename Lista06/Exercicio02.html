@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>tamanho da tela (em polegadas)</P>
+    <input type="text" id="tamTela">
+    <p>escolha a entre a cor (Preto,Prata,Azul,Vermelho)</p>
+    <input type="text" id="corCelu">
+    <button onclick="Gosto()">Será que ele gosta?</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Gosto(){
+        let celular = Number(tamTela.value)
+        let cor = corCelu.value
+       
+        if (celular === 6.5 && (cor === 'Preto' || cor === 'Prata')){
+            div_mensagem.innerHTML = 'Robervaldo Gosta! <br><img src = "Com_aula_de_algoritimo.jpeg">'
+        }else {
+            div_mensagem.innerHTML = 'Robervaldo Não Gosta! <br><img src = "sem_aula_de_algoritimo.jpeg">'
+        }
+    }
+</script>
+
+  
