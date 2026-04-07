@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input placeholder="insira tabuada" id="ipt_input">
+    <button onclick="make()">Tabuada</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script> 
+
+function make(){
+    let X = Number(ipt_input.value)
+    for(let i = 1; i <= 10; i++){
+        console.log (X * i)
+        div_mensagem.innerHTML += `${X * i}<br>`
+    }
+}
+
+/* 2. A Tabuada
+
+Objetivo: Usar a variável de controle do loop para realizar cálculos.
+
+    Exercício: Escolha um número (por exemplo, 7) e use um for para exibir a tabuada desse número no formato: 7 x 1 = 7, 7 x 2 = 14, etc., até o 10.
+
+*/
+
+</script>

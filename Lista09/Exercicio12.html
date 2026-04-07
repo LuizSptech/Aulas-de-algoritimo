@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira texto" id="ipt_insert">
+    <br>
+
+    <button onclick="inverter()">invertido</button>
+    <div id="div_mensagem"></div>
+    <br>
+    <div id="mensagem_div"></div>
+</body>
+</html>
+
+<script>
+function inverter(){
+    let txt = [ipt_insert.value]
+    div_mensagem.innerHTML += `${txt}`
+    for(let i = 0; i < txt.length;){}
+
+}
+
+/*
+Crie um programa o qual:
+
+a) Tenha uma input de texto onde o usuário escreve o texto que deseja inverter.
+
+b) Tenha um botão que inverte o texto e exibe o texto invertido a baixo da input
+
+❌ Não é permitido usar métodos prontos como:
+
+filter, map, reduce, includes, indexOf, lastIndexOf
+
+✅ Use apenas:
+
+laços (for, while) e estruturas básicas (arrays, variáveis) */
+</script>
