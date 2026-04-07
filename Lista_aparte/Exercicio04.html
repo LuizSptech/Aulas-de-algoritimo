@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="make()">SEE!</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function make() {
+            let soma = 0
+            for (let i = 1; i <= 100; i++){
+                soma += i
+            }
+            console.log(soma)
+            div_mensagem.innerHTML = `O total da soma é: ${soma}`;
+        }
+    /*4. Somatória de Valores
+
+Objetivo: Entender o conceito de "acumulador".
+
+    Exercício: Crie uma variável soma começando em 0. Utilize um loop para somar todos os números de 1 a 100 e, ao final, exiba o resultado total no console.*/
+</script>

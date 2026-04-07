@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">SEE</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+
+function make(){
+    let lista = ["Maçã", "Banana", "Morango", "Manga", "Uva"];
+
+    for(let i = 0; i < lista.length; i++){
+        console.log(lista[i]), div_mensagem.innerHTML += `${lista[i]}<br>`
+    }
+}
+
+/*
+5. Percorrendo uma Lista (Array)
+
+Objetivo: Aprender a usar a propriedade .length para iterar sobre dados.
+
+    Exercício: Dada a lista const frutas = ["Maçã", "Banana", "Morango", "Manga", "Uva"];, use um for para imprimir cada fruta da lista.
+
+    Dica: Lembre-se que os arrays em JS começam no índice 0.
+
+
+*/</script>

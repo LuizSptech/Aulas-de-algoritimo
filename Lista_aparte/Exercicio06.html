@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">nome</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+
+    function make(){
+        let lista = ['Gabriel','Luiz','Pedro','Fabinho','Belly','Leticia',]
+
+        for(let i = 0; i < lista.length; i++ ){
+
+            if(lista[i] == 'Belly'){
+                console.log('encontrei a ' + lista[i]), div_mensagem.innerHTML = `Encontrei a ${lista[i]}`
+
+                break
+            }
+        }
+    }
+    /*6. Localizador de Itens
+
+Objetivo: Interromper o loop quando uma condição for atingida.
+
+    Exercício: Crie um array de nomes. Use um for para procurar o nome "Carlos". Se encontrar, imprima "Achei o Carlos!" e use o comando break para parar de procurar.*/
+</script>
