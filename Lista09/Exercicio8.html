@@ -26,17 +26,7 @@
         let qtd_depositos = Number(ipt_inserir.value);
         let valor = Number(ipt_valor.value);
 
-        for (let i = 0; i < qtd_depositos; i++) {
-
-            if((i + 1) % 3 === 0){ div_mensagem.innerHTML += `${i + 1}° Mês R${(valor * (i + 1) + (valor * (1 * 100))).toFixed(2)}<br>`}
-            else{div_mensagem.innerHTML += `${i + 1}° Mês R${(valor * (i + 1)).toFixed(2)}<br>`}
-
-            
-
-            if (i == (qtd_depositos - 1)) {
-                div_mensagem.innerHTML += `<br>Total guardado: R${(valor * (i + 1)).toFixed(2)}`
-            }
-        }
+        
 
     }
 /*Refaça o programa anterior de tal forma que: 
