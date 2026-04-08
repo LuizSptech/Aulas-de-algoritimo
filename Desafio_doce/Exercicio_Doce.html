@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantidade de doces</p>
+    <input placeholder="Quantidade de Macarons" id="ipt_macarons">
+    <br>
+    <input placeholder="Quantidade de Brigadeiros" id="ipt_brigadeiro">
+    <br>
+    <input placeholder="Quantidade de Cupcakes" id="ipt_cupcakes">
+    <br>
+    <input placeholder="Quantidade de Cheesecakes" id="ipt_cheesecakes">
+    <br>
+    <p>Preço dos doces</p>
+      <input placeholder="Preço de Macarons" id="valor_macarons">
+    <br>
+    <input placeholder="Preço de Brigadeiros" id="valor_brigadeiro">
+    <br>
+    <input placeholder="Preço de Cupcakes" id="valor_cupcakes">
+    <br>
+    <input placeholder="Preço de Cheesecakes" id="valor_cheesecakes">
+    <br>
+    <button onclick="make()">Verificar Vendas</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+
+<script>
+
+let doces = ['Macarons','Brigadeiros','Cupcakes','Cheesecakes']
+
+
+
+
+    function make(){
+        div_mensagem.innerHTML = ''
+        let macarons = Number(ipt_macarons.value)
+        let brigadeiros = Number(ipt_brigadeiro.value)
+        let cupcakes = Number(ipt_cupcakes.value)
+        let cheesecakes = Number(ipt_cheesecakes.value)
+
+        let precoMacarons = Number(valor_macarons.value)
+        let precoBrigadeiros = Number(valor_brigadeiro.value)
+        let precoCupcakes = Number(valor_cupcakes.value)
+        let precoCheesecakes = Number(valor_cheesecakes.value)
+
+        let qtd_total = macarons + brigadeiros + cupcakes + cheesecakes;
+        let dinero = (precoMacarons * macarons) + (precoBrigadeiros * brigadeiros) + (precoCupcakes * cupcakes) + (precoCheesecakes * cheesecakes);
+
+        if(precoMacarons < 0 || precoBrigadeiros < 0 || precoCupcakes < 0 || precoCheesecakes < 0){
+            div_mensagem.innerHTML = 'ERRO<br>'
+        }
+        let up = 0
+        
+        for(let i = 1; i <= macarons; i++){
+            up++
+            div_mensagem.innerHTML += `venda ${up} <img src='Macarons.jpg' width='100'> R$${precoMacarons}<br>`
+        }
+        for(let j = 1; j <= brigadeiros; j++){
+            up++
+            div_mensagem.innerHTML += `venda ${up} <img src='Brigadeiro.jpeg' width='100'> R$${precoBrigadeiros}<br>`
+        }
+       
+        for(let p = 1; p <= brigadeiros; p++){
+            up++
+            div_mensagem.innerHTML += `venda ${up} <img src='Cupcakes.jpeg' width='100'> R$${precoCupcakes}<br>`
+        }
+         for(let n = 1; n <= cheesecakes; n++){
+            up++
+            div_mensagem.innerHTML += `venda ${up} <img src='cheesecake.jpg' width='100'> R$${precoCheesecakes}<br>`
+        }
+
+        div_mensagem.innerHTML += `<br> Com a quantidade de ${macarons} Macarons, ${brigadeiros} Brigadeiros, ${cupcakes} Cupcakes e ${cheesecakes} Cheesecakes, a venda totalizará R$${(dinero).toFixed(2)} `
+}
+
+
+
+    
+</script>
