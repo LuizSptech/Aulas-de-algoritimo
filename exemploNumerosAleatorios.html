@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">Numero aleatorio</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function make(){
+       let numero = Math.random() * (20 - 10) + 10; //so gera numeros entre 0 e 1, sendo que não 1 esta includo
+        div_mensagem.innerHTML = `${numero.toFixed(0)}`
+        console.log(numero.toFixed(0))
+    }
+</script>

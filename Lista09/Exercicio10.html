@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Insira sua idade</p>
+    <input oninput="make()" id="ipt_idade">
+    <button onclick="make()">Ver fase</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function make(){
+        let idade = Number(ipt_idade.value
+        )
+        let etapa_vida = ''
+        div_mensagem.innerHTML = ''
+        for( idade; idade <= 100; idade++){
+            if( idade == 100 ){
+                etapa_vida = 'Matusalém'
+                div_mensagem.innerHTML += `${idade} anos (${etapa_vida})<br>`
+
+                
+            }else if (idade >= 50 ){
+                etapa_vida = 'Melhor_idade'
+                div_mensagem.innerHTML += `${idade} anos (${etapa_vida})<br>`
+                
+            }else if (idade >= 18 ){
+                etapa_vida = 'Adulto(pior_fase)'
+                div_mensagem.innerHTML += `${idade} anos ${
+                etapa_vida}<br>` 
+                
+            }else if (idade > 10 ){
+                etapa_vida = 'Adolescência'
+                div_mensagem.innerHTML += `${idade} anos ${
+                etapa_vida}<br>`
+            }else if (idade >= 6 ){
+                etapa_vida = 'Segunda Infância'
+                div_mensagem.innerHTML += `${idade} anos ${
+                etapa_vida}<br>`
+        }else if (idade >= 4 ){
+                etapa_vida = 'Pré-escolar'
+                div_mensagem.innerHTML += `${idade} anos ${
+                etapa_vida}<br>`
+
+    }else if (idade >= 0 ){
+                etapa_vida = 'Primeira Infância'
+                div_mensagem.innerHTML += `${idade} anos ${
+                etapa_vida}<br>`
+    }}}
+    
+    /*
+   0 anos (Primeira Infância)   
+
+   1 anos (Primeira Infância)   
+
+   2 anos (Primeira Infância)   
+
+   3 anos (Primeira Infância)   
+
+   4 anos (Primeira Infância)   
+
+   5 anos (Pré-escolar)   
+
+   6 anos (Pré-escolar)   
+
+   7 anos (Segunda Infância)   
+
+*/</script>
