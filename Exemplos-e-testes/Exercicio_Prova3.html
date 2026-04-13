@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">show</button>
+</body>
+</html>
+
+<script>
+    function make(){
+        let vetor = [1,2,3,2,4,5,3,6];
+        let i = 0;
+        let duplicados = 0;
+
+        while (i < vetor.length){
+            let j = 1 + i;
+            let encontrouDuplicados = false;
+        while(j < vetor.length){
+            if(vetor[i] == vetor[j]){
+                encontrouDuplicados = true;
+            }
+            j++;
+        }
+        if(encontrouDuplicados == true){
+            duplicados++
+        }
+        i++;
+        }
+
+    }
+</script>
