@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Aleatórios</title>
+</head>
+<body>
+    <button onclick="exibirNumeroAleatorio()">
+        Exibir Número Aleatório
+    </button>
+    <div id="div_mensagem">18</div>
+
+
+<script>
+    function exibirNumeroAleatorio() {
+        // Ele gerar números entre 10 e 20 -> Math.random() * (maximo - minimo) + minimo
+        // Usando o toFixed(0) ele inclui o máximo do intervalo (o 20), porque ele arredonta para cima
+        // Se usar o parseInt(), que não arredonda, precisa usar a fórmula Math.random() * (maximo - minimo + 1) + minimo
+        // para incluir o máximo do intervalo  
+
+        let numeroAleatorio = Math.random() * (20 - 10) + 10;
+        div_mensagem.innerHTML = `${numeroAleatorio.toFixed(0)}`;
+    }
+</script></body></html>
