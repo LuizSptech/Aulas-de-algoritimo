@@ -10,3 +10,32 @@
     <div id="div_mensagem"></div>
 </body>
 </html>
+
+
+
+<script>
+    function make(){
+    let random = Math.random() * (3 - 0) + 0
+    
+    if(random.toFixed(0) == 0){
+        div_mensagem.innerHTML = `${random.toFixed(0)}<img src='images.png' width='250'>`
+
+    }else if(random.toFixed(0) == 1){
+        
+        div_mensagem.innerHTML = `${random.toFixed(0)}<img src='Bastard.png' width='250'>`
+
+    }else if(random.toFixed(0) == 2){
+        div_mensagem.innerHTML = `${random.toFixed(0)}<img src='Ubers.png' width='250'>`
+    }else if (random.toFixed(0) == 3){
+        div_mensagem.innerHTML = `${random.toFixed(0)}<img src='Paris_X.png' width='250'>`
+    }
+    console.log(random.toFixed(0))
+    }
+
+    /*<img scr='Manshine.png' width= '250'>
+      <img src='images.png' width='250'>*/
+ </script>
+
+
+
+ 
