@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Escolha pedra,papel ou tesoura</p>
+<input type="text" id="ipt_jogador1">
+<br>
+<p>Escolha pedra,papel ou tesoura</p>
+<input type="text" id="ipt_jogador2">
+<br>
+<button onclick="make()">JOGAR!!</button>
+<div id="div_mensagem"></div>
+
+    
+
+</body>
+</html>
+<script>
+
+    let mensagem = 0
+    let pedra = 1
+    let papel = 10
+    let tesoura = 100
+
+    function make(){
+        let jogada1 = ipt_jogador1.value;
+        let jogada2 = ipt_jogador2.value;
+
+        if (jogada1 == 'pedra'){
+            jogada1 = pedra
+        }else if (jogada1 == 'papel'){
+            jogada1 = papel
+        }else if (jogada1 == 'papel')
+        {jogada1 = tesoura}
+
+        if (jogada2 == 'pedra'){
+            jogada2 = pedra
+        }else if (jogada2 == 'papel'){
+            jogada2 = papel
+        }else {jogada2 = tesoura}
+
+        if(jogada1 > jogada2){
+            mensagem = 'jogador1 ganhou'
+        }else if (jogada1 < jogada2) {mensagem = 'jogador2 ganhou'}
+
+
+
+        if (jogada1 == 1){
+            div_mensagem.innerHTML += `<img src='pedra.png' width='100'>`
+        } else if (jogada1 == 10){
+            div_mensagem.innerHTML += `<img src='papel.png' width='100'>`
+        }else {
+            div_mensagem.innerHTML += `<img src='tesoura.png' width='100'>`
+        }
+        
+        if (jogada2 == 1){
+            div_mensagem.innerHTML += `<img src='pedra.png' width='100'><br>${mensagem}`
+        } else if (jogada2 == 10){
+            div_mensagem.innerHTML += `<img src='papel.png' width='100'><br>${mensagem}`
+        }else {
+            div_mensagem.innerHTML += `<img src='tesoura.png' width='100'> <br>${mensagem}`
+        }
+        
+
+
+    }
+</script>
+
+<script>
+    /*Tente fazer uma pequena simulação do famoso jogo "jo ken po" (pedra, papel e tesoura) em HTML/JS:  
+
+a) Ao clicar no botão "Jogar", deve aparecer abaixo dele ou a figura de uma pedra, de uma folha de papel ou de uma tesoura (seja qual for a imagem, ela deve ter 200px de altura). 
+
+b) Abaixo das imagens, exiba quem venceu e exiba/atualize o placar de vitórias como abaixo: 
+
+     O jogador 1 venceu!  
+
+     Jogador 1: 1 vitória(s) 
+
+     Jogador 2: 0 vitória(s)*/
+</script>
