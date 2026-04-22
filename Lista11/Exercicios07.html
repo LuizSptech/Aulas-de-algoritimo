@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">cabalístico</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    
+
+    function make(){
+        let random = Math.random() * (15 - 1) + 1
+        let randomfixed = random.toFixed(0)
+        let cabal = [3,4,7,10,12]
+        for(let i = 0; i < cabal.length; i ++)
+        if (randomfixed == cabal[i]){
+            div_mensagem.innerHTML = `${randomfixed} <br >Eu S2 números cabalísticos`
+            break
+        }else {div_mensagem.innerHTML = `${randomfixed} <br> Ah, me dá um número bom na próxima!`}
+    }
+    
+    
+    
+/*
+a) Ao clicar no botão "Quero um número cabalístico!", deve sortear e exibir na tela, um número entre 1 e 15  
+
+b) Se o número sorteado for cabalístico (se for o número 3, 4, 7, 10 ou 12), deve aparecer uma frase abaixo do número, dizendo "Eu S2 números cabalísticos!" 
+
+c) Se não for sorteado um número dentre os desejados, deve exibir "Ah, me dá um número bom na próxima!" 
+*/
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">VERIFICAR</button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+<script>
+
+function make(){
+    let random = Math.random() * (23 - 0) + 0;
+    let mensagem = 0
+    if (random <= 11){
+        mensagem = `Bom dia flor do dia, são ${random.toFixed(0)}h`
+    }else if (random <= 17){
+       mensagem = `Boa tarde, já vai tarde! ${random.toFixed(0)}h` 
+    }else {mensagem = `Boa noite, durma bem ${random.toFixed(0)}h`}
+    div_mensagem.innerHTML = `${mensagem}`
+
+}
+
+</script>
