@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Gerar uma nota (1 a 10)</button>
+    <br>
+    <button>Gerar frequencia (1 a 100)</button>
+    <br>
+    <button onclick="situacao()">Ver situação</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+
+
+<script>
+
+    let random_not = Math.random() * (10 - 1) + 1
+    let random_freq = Math.random() * (100 - 1) + 1
+    let nota = random_not.toFixed(0)
+    let frequencia = random_freq.toFixed(0)
+
+function situacao(){
+    alert(`Você esta com a nota ${nota}`)
+    alert(`Você esta com a frequencia de ${frequencia}`)
+}
+
+
+
+
+</script>
