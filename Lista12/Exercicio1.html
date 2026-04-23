@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira numero1" id="ipt_numero1"><br>
+    <input placeholder="Insira numero2" id="ipt_numero2"><br>
+    <button onclick="somar()">Butão</button>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script src="matematica.js"></script>
+<script>
+    let numero1 = Number(ipt_numero1.value)
+    let numero2 = Number(ipt_numero2.value)
+    somar(numero1,numero2)
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="make()">Gerar nota entre 3 a 10</button>
+    <div id="div_nota"></div>
+    <button onclick="make2()">Gerar uma frequencia entre 50 a 100</button>
+    <div id="div_freq"></div>
+    <br>
+    <button onclick="make3()">Ver aprovação</button>
+    <div id="div_situacao"></div>
+</body>
+
+</html>
+<script>
+    let random = 0
+    let random1 = 0
+
+    function make() {
+        random = (Math.random(0) * (10 - 3) + 3).toFixed(1)
+        div_nota.innerHTML = `${random}`
+    }
+    function make2() {
+        random1 = (Math.random(0) * (100 - 50) + 50).toFixed(1)
+        div_freq.innerHTML = `${random1}`
+
+    }
+    function make3() {
+        div_situacao.innerHTML = ''
+        if (random >= 6) {
+            div_situacao.innerHTML += `você foi aprovado(a) com ${random} de media`
+        } else { div_situacao.innerHTML += `você foi reprovado com ${random} de media` }
+
+
+        if (random1 >= 75){
+            div_situacao.innerHTML += ` é com ${random1} de frequencia`
+        }else {div_situacao.innerHTML += ` mas foi reprovado  com ${random1} de frequencia`}
+
+    }
+
+
+
+    /*
+
+a) Tenha um botão "Gerar uma nota de aluno entre 3 e 10" que faz aparecer, abaixo dele, a nota gerada  
+
+b) Tenha um botão "Gerar uma frequência de aluno entre 50 e 100" que faz aparecer, abaixo dele, a frequência gerada  
+
+c) Deixe todos os valores com 1 casa decimal na tela  
+
+d) Ao clicar no botão “Ver Aprovação”, exiba na tela uma mensagem como a abaixo, de acordo com a situação do aluno: 
+
+    "Com nota X e frequência Y, o aluno está Z!" 
+
+Onde X é a nota, Y a frequência e Z a situação do aluno (aprovado ou reprovado), sendo que para a aprovação, o aluno deve possuir nota a partir de 6 e frequência a partir de 75%. 
+*/
+</script>
