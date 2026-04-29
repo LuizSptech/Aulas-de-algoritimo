@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>nome</p>
+    <input type="text" id="ipt_nome">
+    <p>idade</p>
+    <input type="text" id="ipt_idade">
+    <p>NOTAS</p>
+    <input type="text" id="ipt_notas">
+    <button onclick="make()">Registrar</button>
+    <br>
+    <hr>
+    <button onclick="moggados()">Exibir reprovados</button>
+    
+    <div id="div_moggados"></div>
+</body>
+
+</html>
+
+
+<script>
+    let alunos = [];   
+
+    function make() {
+        let nome = ipt_nome.value;
+        let idade = Number(ipt_idade.value);
+        let nota = Number(ipt_notas.value);
+
+        let aluno = {
+            "nome": nome,
+            "idade": idade,
+            "nota": nota
+        }
+
+        alunos.push(aluno);
+
+    console.log(alunos);    
+    }
+
+
+    function moggados(){
+    for(let i = 0; i < alunos.length; i++)
+    
+    if(alunos[i].nota < 6){
+    console.log(alunos[i]["nome"])
+    
+    }
+    }
+    
+</script>

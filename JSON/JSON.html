@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira o seu nome" id="ipt_nome">
+</body>
+</html>
+
+<script>
+    let nome = ipt_nome.value
+    let aluno = {
+        "nome": nome,
+        "idade": 18,
+        "notas": [8,7],
+        "endereco": {
+            "rua": "Rua x",
+            "numero": 311
+        }
+
+    };   
+    let informacao = "endereco";
+
+    console.log(aluno);
+    console.log(`meu nome é: ${aluno.nome}`);
+    console.log(`minha idade é: ${aluno["idade"]}`);
+    console.log(`minhas notas são: ${aluno.notas[0]}`);
+    console.log(aluno.endereco['numero']);
+    console.log(`acessando ${informacao}: ${aluno[informacao]}`);
+    //INSERINDO UMA NOVA CHAVE NO JSON
+
+    aluno["altura"] = 1.70;
+
+    console.log(aluno)
+
+</script>
