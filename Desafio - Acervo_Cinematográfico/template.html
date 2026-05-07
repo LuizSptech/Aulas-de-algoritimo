@@ -51,17 +51,30 @@ function pesquisarNome(){
 
 let pesquisa = (ipt_nome.value).toLowerCase()
 for(let i = 0; i < filmes.length; i++){
+  let filme = filmes[i].nome.toLowerCase()
+  if((filmes[i].nome.toLowerCase()).includes(pesquisa.toLowerCase()))
 
-  if((filmes[i].nome).includes(pesquisa))
-
-  {console.log(filmes[i].nome)
+  { div_resultado.innerHTML += `${filmes[i].nome}<br>`
+    console.log(filmes[i].nome)
   }}
 /*console.log(`${filmes[1].nome}`)*/
 
 }
 
 function pesquisarDiretor(){
-  
+  let pesquisa = (ipt_nome.value).toLowerCase()
+  for(let i = 0; i< filmes.length; i++){
+    if((filmes[i].diretor).includes(pesquisa)){
+      div_resultado.innerHTML += `${filmes[i].diretor}<br>`
+    }
+
+  }
+}
+
+function pesquisarAno(){
+  let pesquisa = Number(ipt_ano_parametro)
+  for(let i = 0; )
+
 }
 
 </script>

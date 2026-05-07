@@ -1,19 +1,31 @@
+let lista = [10,20,30];
+
+let entrada1 = Number(ipt_Valor.value)
+let entrada2 = Number(ipt_indice.value)
+let entrada3 = Number(ipt_quantidade.value)
+
+function show(){
+    saida.innerHTML = `${lista}`
+}
+
+
+
 function contemElemento(lista, element) {
     let list = lista.length;
-    let novalista = new Array(list);
-    let tem = false;
+    element = new Array(list);
+    let contem = false;
     for (let i = 0; i < list; i++) {
         if (lista[i] == element) {
             contem = true;
             break;
         }
-        return tem;
+        return contem;
     }
 }
 function buscarPrimeiraPosicao(lista, element) {
     let list = lista.length;
-    let novalista = new Array(list);
-    let tem = false;
+    element = new Array(list);
+    let contem = false;
     for (let i = 0; i < list; i++) {
         if (lista[i] == element) {
             contem = true;
@@ -24,8 +36,8 @@ function buscarPrimeiraPosicao(lista, element) {
 }
 function buscarUltimaPosica(lista, element) {
     let list = lista.length;
-    let novalista = new Array(list);
-    let tem = false;
+    element = new Array(list);
+    let contem = false;
     for (let i = list; i < 0; i--) {
         if (lista[i] == element) {
             contem = true;
@@ -37,16 +49,16 @@ function buscarUltimaPosica(lista, element) {
 function concatenar(listaA, listaB) {
     let list = listaA.length
     let b = listaB.length
-    let novalista = new Array((list + b) - 1)
+    let element = new Array((list + b) - 1)
     for (let i = 0; i < list; i++) {
-        novalista[i] = listaA[i]
+        element[i] = listaA[i]
     }
     let l = 0
     for (let o = i; o < ((list + b) - 1); o++) {
-        novalista[o] = listaB[l]
+        element[o] = listaB[l]
         l++
     }
-    return novalista;
+    return element;
 }
 function comparar(listaA, listaB) {
     let list = listaA.length
