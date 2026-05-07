@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+/*Exemplo-async*/
+
+
+
+console.log("Antes do Timeout")
+
+
+let consulta = new Promise((resolve, reject) =>{
+    
+    setTimeout(() => {
+    
+    resolve("Timeout")
+    //reject( new Error("não foi possivel cumprir a promessa : ("))
+    
+    }, 5000);
+    
+});
+
+
+
+consulta.then(valor => {
+    console.log(valor)
+})
+console.log("Depois do Timeout")
+
+
+fetch().then(Resposta => {
+    Resposta.json().then(json => {
+        console.log(json)
+    })
+
+    console.log(Resposta)
+})
+
+.catch(error => {
+    console.log(error);
+})
+
+
+
+async function viaCep(){
+    let resposta = await fetch();
+    let json = await resposta.json();
+    console.log(json);
+
+}
+
+</script>

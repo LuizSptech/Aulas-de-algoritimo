@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<div id="div"></div>
+
+<script>
+    
+
+let numeros = [7,42,89,10,25,99]
+/*
+
+let exibir = (indice, valor) => {
+    if(valor % 2 == 0){
+    console.log(indice,valor)
+    }
+}
+
+
+numeros.forEach(exibir)
+
+
+
+
+
+let numeros_pares = numeros.filter((valor) => {
+    return valor % 2 == 0;
+}).forEach(valor => 
+ console.log(valor)); */
+
+
+let parOuImpar = numeros.map((valor) => {
+    if(valor % 2 == 0){
+    return "<h1>par</h2>";
+    } else {
+        return "<h1>impar</>"
+    }
+
+}) 
+
+parOuImpar.forEach(valor => {
+    div.innerHTML += valor;
+})
+console.log(parOuImpar)
+
+
+
+let somar = numeros.reduce((acumulador, atual) => {
+    return acumulador + atual;
+})
+console.log(somar)
+
+
+
+</script>
