@@ -35,12 +35,13 @@
     <hr>
     <input placeholder="nome_musica" id="ipt_nome2"><br>
     <button onclick="mediaAvaliacoes()">Calcular media das avaliacoes</button>
-    <div id="div_mensagem"></div>
+
     <br>
     <hr>
     <input placeholder="buscar por membros" id="ipt_pesquisa_membro"><br>
     <button onclick="buscarBandasPorIntegrantes()">Pesquisar por membro do grupo</button>
 
+    <div id="div_mensagem"></div>
     <div id="saida"></div>
 
 </body>
@@ -48,7 +49,8 @@
 </html>
 
 <script>
-
+    div_mensagem.innerHTML = ''
+    saida.innerHTML = ''
     let playlista = []
 
     let musicas = {
@@ -63,15 +65,26 @@
     }
 
     function adicionarMusica() {
+        div_mensagem.innerHTML = ''
+        saida.innerHTML = ''
+
         let nome_musica = ipt_nome_musica.value;
         let nome_banda = ipt_nome_banda.value;
         let tempo_musica = ipt_duracao.value;
         let ano_lancamento = ipt_ano_lancamento.value;
         let avaliacoes = ipt_avaliacao.value;
         let membros_banda = ipt_integrantes.value;
-        if ((((nome_musica && nome_banda) && tempo_musica && ano_lancamento) && avaliacoes && membros_banda) == '') {
-            alert('todos os dados precisam estar preenchidos')
+        if (((nome_musica && nome_banda) && tempo_musica && ano_lancamento) == '') {
+            div_mensagem.innerHTML += 'Preencha todos os campos para adicionar musica'
         }
+
+        else if (membros_banda == '' || avaliacoes == '') {
+            div_mensagem.innerHTML += 'Informe ao menos uma avaliação e um integrante'
+        }
+        else if (avaliacoes > 5 || avaliacoes < 1) {
+            div_mensagem.innerHTML += 'Todas as avaliações devem ser entre 1 e 5'
+        }
+
         let avaliacoesplit = avaliacoes.split(",")
 
         musicas = {
@@ -85,6 +98,12 @@
 
 
         }
+        for (let i = 0; i < musicas.length; i++) {
+            if (nome_musica == musicas[i].titulo) {
+                div_mensagem.innerHTML += `Já existe uma musica com este título`
+            }
+
+        }
         playlista.push(musicas)
     }
 
@@ -93,6 +112,11 @@
 
     function listarMusicas() {
         saida.innerHTML += ''
+        div_mensagem.innerHTML = ''
+
+
+
+
 
         for (let i = 0; i < playlista.length; i++) {
             saida.innerHTML += ''
@@ -106,73 +130,116 @@
 
 
         }
+        if (playlista.length == 0) {
+            div_mensagem.innerHTML += `nenhuma musica cadastrada`
+        }
 
 
     }
 
     function removerMusica() {
+        div_mensagem.innerHTML = ''
+        saida.innerHTML = ''
 
         let remover = (ipt_remove_musica.value).toLowerCase();
+        if (remover == '') {
+            div_mensagem.innerHTML += `Informe o titulo para remover`
+        }
         for (let i = 0; i < playlista.length; i++) {
 
             if (playlista[i].titulo.toLowerCase().includes(remover)) {
-
-
                 playlista.splice(i, 1);
                 break
+            } else {
+
+                div_mensagem.innerHTML += `Musica não encontrada`
             }
             continue
+
+
         }
 
     }
 
     function atualizarAnoLancamento() {
+        div_mensagem.innerHTML = ''
+        saida.innerHTML = ''
         let nome = (ipt_nome.value).toLowerCase();
         let ano = ipt_atualiza_ano.value;
-
+        if (nome == '') {
+            div_mensagem.innerHTML += `Informe o titulo`
+        }
+        else if (ano == '') {
+            div_mensagem.innerHTML += `Informe o ano`
+        }
         for (let i = 0; i < playlista.length; i++) {
             if (playlista[i].titulo.toLowerCase().includes(nome)) {
                 playlista[i].anoLancamento = ano
                 console.log(playlista[i].anoLancamento)
 
                 break
+            } else {
+
+                div_mensagem.innerHTML += `Musica não encontrada para atualização`
             }
             continue
         }
     }
 
     function mediaAvaliacoes() {
-
+        div_mensagem.innerHTML = ''
+        saida.innerHTML = ''
         let nome = ipt_nome2.value;
+
+        let media = 0
+        let soma = 0
+        let avaliacoes = 0
+        
         for (let i = 0; i < playlista.length; i++) {
-            let media = 0;
-            let soma = 0;
-            let j = 0;
-
-
-            if (nome == playlista[i].titulo) {
-                let tamanho = playlista[i].avaliacoes.length;
-                while (j < playlista[i].avaliacoes.length) {
-                    let numero = Number(playlista[i].avaliacoes[j])
-                    soma += numero
-                    j++
+            for(let alan = 0 ; alan < playlista[i].avaliacoes; alan++){
+                soma =+ Number(playlista[alan][avaliacoes][i]);
+                    avaliacoes++;
                 }
-                media = soma / j;
+                media = soma / avaliacoes
+        
                 saida.innerHTML += `A média das notas da musica ${nome} é: ${media}<br>`
+                if (nome == '') {
+                    div_mensagem.innerHTML += `Informe titulo para calcular a media`
+                }
+        
+            } {
+                div_mensagem.innerHTML += 'Musica não encontrada para calcular a media'
             }
-        }
+        
+
     }
 
 
 
-    function buscarBandasPorIntegrantes() {
 
+    function buscarBandasPorIntegrantes() {
+        div_mensagem.innerHTML = ''
+        saida.innerHTML = ''
+
+        let tem = false
         let nome_pesquisa = ipt_pesquisa_membro.value;
-        for (let i = 0; i < playlista.length; i++) {
-            if (playlista[i].integrantes.includes(nome_pesquisa)) {
-                saida.innerHTML += `${playlista[i].banda} <br>`;
+        if (nome_pesquisa == '') {
+            div_mensagem.innerHTML += `Informe o integrante para buscar a banda`
+        }
+        for (let ricardo = 0; ricardo < playlista.length; ricardo++) {
+            for (let i = 0; i < playlista[ricardo].integrantes.length; i++) {
+                if (playlista[ricardo].integrantes[i].includes(nome_pesquisa)) {
+                    saida.innerHTML += `${playlista[i].banda} <br>`
+                }
+
+                else {
+                    div_mensagem.innerHTML += `Integrante não encontrado nas bandas cadastradas`
+                }
+
 
             }
+
+
         }
     }
 

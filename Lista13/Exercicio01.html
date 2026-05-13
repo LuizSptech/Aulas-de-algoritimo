@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nome</p>
+    <input type="text" id="ipt_nome">
+    <p>RA</p>
+    <input type="text" id="ipt_RA">
+    <p>Curso</p>
+    <input type="text" id="ipt_curso">
+    <p>Semestre</p>
+    <input type="text" id="ipt_semestre">
+    <button onclick="SHOW()">Cadastrar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+function SHOW(){
+    let nome = ipt_nome.value;
+    let RA = ipt_RA.value;
+    let curso = ipt_curso.value
+    let Semestre = Number(ipt_semestre.value);
+
+    let aluno = [{
+        "nome": nome,
+        "RA": RA,
+        "curso": curso,
+        "semestre": Semestre,
+    }]
+    console.log(aluno[0])
+
+}
+
+</script>
