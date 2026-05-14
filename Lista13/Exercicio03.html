@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="make()">SHOW THE WAY</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function make(){
+
+        let cliente = {
+            "nome": 'luiz',
+            "idade": 18,
+            "endereço": {
+                "rua": "Antonio de siqueira",
+                "numero": 578,
+                "cidade": "São Paulo",
+            }
+        }
+       
+        div_mensagem.innerHTML = `${cliente.nome}<br> ${cliente.idade} <br>${cliente.endereço.rua}<br> ${cliente.endereço.numero} <br>${cliente.endereço.cidade}`
+    }
+    
+    </script>

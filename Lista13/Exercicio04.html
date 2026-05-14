@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>insira dinheiro</p>
+    <input type="text" id="ipt_entrada"><br>
+    <button onclick="enter()">depositar</button><br>
+    <button onclick="out()">sacar</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+    <script>
+        
+        let conta = {
+            "titular": "luiz",
+            "saldo": 0,
+            "banco": "Safra", 
+        }
+
+        function enter(){
+            let deposito = Number(ipt_entrada.value);
+            conta.saldo += deposito
+            
+            div_mensagem.innerHTML = `${conta.saldo}`
+        }
+        function out(){
+            let deposito = Number(ipt_entrada.value);
+            conta.saldo -= deposito
+            
+            div_mensagem.innerHTML = `${conta.saldo}`
+        }
+    </script>

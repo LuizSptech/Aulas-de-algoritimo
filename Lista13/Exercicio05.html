@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="SHOW()">Mostrar contatos</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function SHOW(){
+
+        let contatos = [
+            {"nome": "Luiz",
+            "telefone": "11 95730-9214",},
+            {"nome": "Rafaela",
+            "telefone": "11 99999-9214",},
+            {"nome": "Alan",
+            "telefone": "11 96767-9214",},
+            {"nome": "Murilo",
+            "telefone": "11 96969-9214",}]
+            
+         
+            for(let i = 0; i < contatos.length; i++){
+                div_mensagem.innerHTML += `${contatos[i].nome} <br> ${contatos[i].telefone}<br>`
+            }
+
+
+
+        }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nome produto</p>
+    <input type="text" id="ipt_nome">
+    <br>
+    <p>Preco produto</p>
+    <input type="text" id="ipt_preco">
+    <br>
+    <p>Quantidade produto</p>
+    <input type="text" id="ipt_qtd">
+    <br>
+    <button onclick="make()">ver o preço</button>
+    <div id="div_mensagem"></div>
+ 
+</body>
+</html>
+
+<script>
+function make(){
+    
+    let name = ipt_nome.value;
+    let price = Number(ipt_preco.value)
+    let amount = Number(ipt_qtd.value)
+    let produto = {
+        "nome": name,
+        "preço": price,
+        "Quantidade": amount,
+    }
+    div_mensagem.innerHTML = `Produto: ${produto.nome} Preço: ${produto.preço.toFixed(2)} Quantidade: ${produto.Quantidade} Total: ${(price * amount).toFixed(2)}`
+
+}
+
+
+</script>
