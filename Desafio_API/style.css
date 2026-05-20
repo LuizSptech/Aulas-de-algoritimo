@@ -1,0 +1,17 @@
+.tudo{
+    display: flex;
+    padding-top: 450px;
+    justify-content: center;
+    
+}
+
+#msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+

@@ -16,24 +16,36 @@
 
 <script>
     function make() {
+        let contador = 0
+        let notas = []
         let turma = [{
             "nome": "Luiz",
-            "nota": "7",
+            "nota": 7,
         },
         {
             "nome": "Alan",
-            "nota": "1",
+            "nota": 1,
         },
         {
             "nome": "Rafaela",
-            "nota": "8",
+            "nota": 8,
         }, {
             "nome": "Murilo",
-            "nota": "9",
+            "nota": 9,
         },
+
         {
             "nome": "Lucas",
-            "nota": "10",
+            "nota": 10,
         }]
-    }
+        for(let i = 0; i < turma.length; i++){
+            notas.push(turma[i].nota)
+            contador += notas[i]
+            div_mensagem.innerHTML = ` a media da sala sera${contador / turma.length}`
+            }
+            
+            
+        }
+
+    
 </script>
