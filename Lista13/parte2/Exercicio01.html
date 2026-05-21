@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_dia">
+    <button onclick="make()">Traduzir</button>
+   
+</body>
+</html>
+<script>
+    const dias = {
+   "monday":    "Segunda-feira",
+   "tuesday":   "Terça-feira",
+    "wednesday": "Quarta-feira",
+    "thursday": "Quinta-feira",
+    "friday": "Sexta0feira",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+ };
+ function make(){
+    let entrada = ipt_dia.value
+    /*if(entrada = dias[0]);*/
+    console.log(dias.monday)
+ }
+</script>
