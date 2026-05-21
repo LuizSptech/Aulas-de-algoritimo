@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_entrada">
+    <button onclick="make()">agui</button>
+    <hr>
+    <div id="div_mensagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    let lista = [{
+        "nome": "Celular",
+        "categoria": "eletronico",
+        "preco": 1200,
+    },
+    {
+        "nome": "micro-ondas",
+        "categoria": "eletronico",
+        "preco": 800,
+    },
+    {
+        "nome": "guarda-roupa",
+        "categoria": "Movel",
+        "preco": 3000,
+    },
+    {
+        "nome": "garrafa",
+        "categoria": "utensilio",
+        "preco": 50,
+    },
+    {
+        "nome": "moletom",
+        "categoria": "roupa",
+        "preco": 236,
+    },
+    {
+        "nome": "data-show",
+        "categoria": "eletronico",
+        "preco": 267,
+    }
+    ]
+
+    function make(){
+        let entrada = ipt_entrada.value
+        for(let i = 0; i < lista.length; i++){
+            if(entrada == lista[i].categoria){
+                div_mensagem.innerHTML += `${lista[i].nome}<br>${lista[i].categoria}<br>${lista[i].preco}<br><hr>`
+            }
+        }
+        console.log(lista[0].categoria)
+    }
+</script>

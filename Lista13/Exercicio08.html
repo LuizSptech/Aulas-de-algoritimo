@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="make()">mostrar</button>
+<hr>
+<div id="entrada"></div>
+<hr>
+<div id="principal"></div>
+<hr>
+<div id="sobremesa"></div>    
+</body>
+</html>
+
+
+<script>
+    let comidas = [{
+        "nome": "bisteca",
+        "tipo": "principal",
+        "preco": 30
+    },{
+        "nome": "pão",
+        "tipo": "entrada",
+        "preco": 15
+    },{
+        "nome": "pudim",
+        "tipo": "sobremesa",
+        "preco": 20,
+    },{
+        "nome": "strogonoff",
+        "tipo": "principal",
+        "preco": 100,
+    },{
+        "nome": "lasanha",
+        "tipo": "principal",
+        "preco": 67,
+    }
+    ]
+    function make(){
+        entrada.innerHTML = ''
+        principal.innerHTML = ''
+        sobremesa.innerHTML = ''
+        for(let i = 0; i < comidas.length; i++){
+            if(comidas[i].tipo == "entrada"){
+                entrada.innerHTML += `${comidas[i].nome}<br> ${comidas[i].tipo}<br> ${comidas[i].preco}<br>`
+                }
+                if(comidas[i].tipo == "principal"){
+                principal.innerHTML += `${comidas[i].nome}<br> ${comidas[i].tipo}<br> ${comidas[i].preco}<br>`
+                }
+                if(comidas[i].tipo == "sobremesa"){
+                sobremesa.innerHTML += `${comidas[i].nome}<br> ${comidas[i].tipo}<br> ${comidas[i].preco}<br>`
+                }
+    }}
+</script>
