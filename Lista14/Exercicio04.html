@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="digite uma palavra ou frase" id="ipt_entrada">
+    <br>
+
+    <button onclick="back()">Desfazer (Crl+Z)</button>
+    <hr>
+    <button onclick="remake()">Refazer (Crl+Shift+Z)</button>
+    <hr>
+    <button onclick="escreva()">Escrever (escrever)</button>
+
+    <div id="atual"></div>
+    <div id="historico"></div>
+</body>
+</html>
+
+<script>
+    let feito = [];
+    let desfeito = [];
+    let palavra = ipt_entrada.value;
+    function escreva(){
+        if(palavra == ''){
+            alert('insira mensagem')
+        }else{
+            feito.push(palavra)
+        }
+    }
+
+    function back(){
+        if(feito == ''){
+            alert('nada para desfazer')
+        } else{
+            let mudanca = feito.pop()
+            desfeito.push(mudanca)
+            atual.innerHTML = `ação desfeita${feito}`
+        }
+    }
+
+    function remake(){
+        if(desfeito == ''){
+            alert('nada para fazer')
+        }else {
+            let retirando = desfeito.pop()
+            feito.push(retirando)
+            historico.innerHTML = `Ação refeita: ${retirando}`
+        }
+
+    }
+</script>

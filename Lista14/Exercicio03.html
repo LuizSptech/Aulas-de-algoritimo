@@ -13,35 +13,38 @@
     <button onclick="back()">Voltar</button>
     <br>
     <div id="paginas"></div>
+    <br>
+    <div id="_historico"></div>
 
 
 </body>
 </html>
 
 <script>
-
-
-function go(){
+    let historico = []
     
+    
+    function go(){
+    let entrada = ipt_URL.value;
+    if(entrada == ''){
+        alert('Digite uma URL antes de visitar')
+    }else {
+        historico.push(entrada)
+        paginas.innerHTML = `visitando: ${entrada} historico: ${historico}`
+    }
 }
-    /*A aplicação deve ter:
 
-    Um input para digitar uma URL (ex: google.com)
-    Um botão "Visitar"
-    Um botão "Voltar"
-    Uma área onde o histórico de páginas visitadas é exibido
+function back(){
+    _historico.innerHTML = ''
+    if(historico == ''){
+        alert('Não há paginas no historico')
+    }else if (historico.length == 1){
+        _historico.innerHTML += `Você esta na pagina inicial. Não e possivel voltar mais`
+    }else {
+        let atualizacao = historico.pop()
+        _historico.innerHTML += `Voltando para: ${atualizacao} historico ${historico}`
+    }
 
-Ao clicar em "Visitar":
-
-    Valide se o input está preenchido. Se não estiver, exiba: "Digite uma URL antes de visitar."
-    Adicione a URL na pilha de histórico
-    Exiba: "Visitando: [URL]" e mostre o histórico completo (do mais recente para o mais antigo)
-
-Ao clicar em "Voltar":
-
-    Se o histórico estiver vazio: "Não há páginas no histórico."
-    Se houver apenas 1 página: "Você está na página inicial. Não é possível voltar mais."
-    Se houver mais de 1: remova o topo da pilha e exiba: "Voltando para: [URL anterior]". Atualize o histórico.
-
-💡 Dica: Use pop() para simular o botão "Voltar" do navegador.*/
+}
+   
 </script>
