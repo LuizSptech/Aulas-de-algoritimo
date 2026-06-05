@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="nome do documento" id="ipt_nomeDocumento">
+    
+    <input placeholder="Numero de paginas" id="ipt_qtdPaginas">
+    <br>
+    <button onclick="send()">Enviar para Impressora</button>
+    <br>
+    <button onclick="impress()">Imprimimr Proximo</button>
+    <hr>
+    <div id="fila"></div>
+    <br>
+    <div id="impresso"></div>
+</body>
+</html>
+
+<script>
+let nome = ipt_nomeDocumento.value;
+let Paginas = Number(ipt_qtdPaginas.value);
+let lista = []
+let arquivo = {
+    "nome": `${nome}`,
+    "paginas": `${Paginas}`
+}
+
+function send(){
+    if(nome , Paginas == ''){
+        alert('O documento precisa ter nome e quantidade de paginas maior que 0 ')
+    }else 
+    {   lista.push(arquivo)
+        fila.innerHTML = `Documento ${arquivo.nome} adicionado á fila ${arquivo.paginas}`
+    }
+}
+
+function impress(){
+    if(lista == ''){
+        alert('Nenhum documento na fila de impressão')
+    }else {
+        console.log(lista[0])
+        impresso.innerHTML = `Imprimindo ${lista[0].nome} ${lista[0].paginas}`
+        lista.shift()
+        console.log(lista[0])
+    }
+}
+
+</script>

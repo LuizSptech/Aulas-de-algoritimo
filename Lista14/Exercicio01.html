@@ -6,32 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="saida"></div>
-    
+    <input placeholder="nome do cliente" id="ipt_nome">
+    <br>
+    <button onclick="enter()">Entrar na Fila</button>
+    <br>
+    <button onclick="out()">Chamar Proximo</button>
     <hr>
-    <button></button>
+    <div id="entrada"></div>
+    <hr>
+    <div id="saida"></div>
+
 </body>
 </html>
+
 <script>
-let cinema = [  
-                ["livre","ocupado","livre","livre"],
-                ["ocupado","livre","ocupado","livre"],
-                ["livre","ocupado","livre","ocupado"],
-                
-            ];
-for(let i = 0; i < cinema.length;  i++){
-    saida.innerHTML = `linha ${i} `
-    for(let j = 0; j < cinema[i].length; j++){
-        saida.innerHTML = `coluna ${cinema[i]}`
-        
-    }
+
+
+let lista = []
+let proximo = ipt_nome.value
+
+function enter(){
+    if(proximo == ''){
+        alert('preencha um nome')
+    }else {
+    lista.push(proximo)
+    entrada.innerHTML = `${proximo} entrou na fila na posição ${lista.length}`
+}
 }
 
-/*Crie uma matriz chamada cinema representando os assentos de uma sala com 3 linhas e 4 colunas. Utilize os valores "Livre" e "Ocupado" para representar os assentos. Percorra a matriz e exiba todos os assentos na tela no seguinte formato:
 
-Linha 1: Livre | Ocupado | Livre | Livre
-Linha 2: Ocupado | Ocupado | Livre | Livre
+function out(){
+    if(lista.length == 0){
+        alert('Não há clientes na fila')
+    }else {
+        let atual = lista.shift()
+        saida.innerHTML = `Chamando: ${atual}. Restam ${lista.length} pessoa(s) na fila`
+    }
 
-*/
-
+}
 </script>
