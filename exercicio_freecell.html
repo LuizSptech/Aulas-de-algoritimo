@@ -236,10 +236,21 @@
     // Você pode usar Math.random() e Math.floor()
     // =====================================================
     function embaralharCartas() {
-      for(let i = 0; i < cartas.length; i++){      
-        Math.floor
-      }
+     for(let i = 0; i < cartas.length; i++){
+
+      let numero1 = Math.floor((Math.random() * cartas.length));
+
+      let numero2 = Math.floor((Math.random() * cartas.length));
       
+      let a = cartas[numero1];
+      
+      let a2 = cartas[numero2];
+      
+      cartas[numero1] = a2;
+      
+      cartas[numero2] = a;
+    }
+    console.log(cartas)
     }
 
     // =====================================================
