@@ -1,2 +1,2 @@
-# Aulas-de-algoritimo
-Acompanhamento das listas de exercicio de algoritimo
+# Exercicios-de-Programação
+Armazenamento de exercicios de diversas linguagens
