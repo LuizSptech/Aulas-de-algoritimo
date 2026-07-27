@@ -1,4 +1,3 @@
-using UnityEngine;
 
 public class Desafio01 : MonoBehaviour
 {
