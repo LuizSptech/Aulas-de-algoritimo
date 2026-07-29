@@ -17,11 +17,11 @@ print(a / b);
 print(a % b);
 
 
-nome = input("Digite seu nome:")
-idade = input("Digite sua idade:")
+nome = input("Digite seu nome:");
+idade = input("Digite sua idade:");
 print("Olá", nome)
 
 if idade >= 18:
-    print("Maior de idade")
+    print("Maior de idade");
 else:
-    print("não e maior de idade")
+    print("não e maior de idade");
