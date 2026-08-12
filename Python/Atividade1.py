@@ -110,6 +110,20 @@ print(type(resultado_float))
 
 
 print(f"""   
-    {math.pow(2,3)}
-    
+    1: {math.pow(2,3)}
+    2: {math.pow((-2),3)}
+    3: {math.pow(1,0)}
+    4: {math.pow((-1),0)}
+    5: {math.pow(2,0)}
+    6: {math.pow((2/5),3)}
+    7: {math.pow(3,-2)}
+    8: {math.pow(3,-2)}
+    9: {math.pow(math.pow(-1,3),4)}
+    10: {math.pow((0.5),3)}
+    11: {math.pow((0.25),4)}
+    12: {math.pow(0,4)}
+    13: {math.pow(1 + 0.41, 2)}
+    14: 
+    15: 
+    16: 
     """)

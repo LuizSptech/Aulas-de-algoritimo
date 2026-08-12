@@ -13,7 +13,7 @@ public class Desafio6 : MonoBehaviour
         Debug.Log(MaiorQueMil(numerox, numeroy, numeroz));
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
         
